@@ -1,0 +1,198 @@
+/* ─── Hero shell ────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--nav-width);
+  overflow: hidden;
+}
+
+/* Subtle grid */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  z-index: 1;
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* ─── Name block ────────────────────────────────────────────── */
+.nameBlock {
+  text-align: center;
+  animation: fadeInUp 0.8s 0.1s both;
+}
+
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  margin: auto 5%;
+  margin-top: 14px;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Atom wrapper ──────────────────────────────────────────── */
+.atomWrap {
+  width: min(80vw, 760px);
+  animation: fadeIn 1s 0.4s both;
+  /* allow labels that sit at the edges to show */
+  overflow: visible;
+  display: flex;
+}
+
+.atomSvg {
+  width: 85%;
+  height: auto;
+  overflow: visible;
+  margin: auto;
+}
+
+/* ─── SVG element styles ────────────────────────────────────── */
+
+/* Orbit ellipses – keep black, matching user's design */
+.orbit {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2.16px;
+}
+
+/* Nucleus – filled black circle */
+.nucleus {
+  fill: var(--text);
+  stroke: var(--text);
+  stroke-width: 4.1px;
+}
+
+/* Connector lines */
+.connector {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1px;
+}
+
+/* Small dots at the ends of connector lines */
+.connectorDot {
+  fill: var(--text);
+  stroke: var(--text);
+  stroke-width: 1.39px;
+}
+
+/* Animated electron dots – accent colour */
+.electron {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 4px var(--accent-light));
+}
+
+/* ─── Clickable label groups ────────────────────────────────── */
+.labelGroup {
+  cursor: pointer;
+}
+
+/* Text labels */
+.label {
+  font-family: var(--font-serif);
+  font-size: 50.258px;
+  fill: var(--text);
+  transition: fill 0.25s ease;
+}
+
+.labelGroup:hover .label {
+  fill: var(--accent);
+}
+
+/* ─── Scroll cue ────────────────────────────────────────────── */
+.scrollCue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-faint);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color var(--transition);
+  animation: fadeInUp 0.8s 1s both;
+}
+
+.scrollCue:hover {
+  color: var(--accent);
+}
+
+.scrollCue span {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.scrollArrow {
+  width: 18px;
+  height: 18px;
+  animation: bounce 1.8s ease-in-out infinite;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(5px); }
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { padding-left: 0; }
+  .atomWrap { width: min(95vw, 520px); }
+}
+
+@media (max-width: 480px) {
+  .atomWrap { width: 95vw; }
+  .name { font-size: 2.2rem; }
+}

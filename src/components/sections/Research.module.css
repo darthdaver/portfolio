@@ -1,0 +1,168 @@
+/* ─── Two-column layout ─────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ─── Left — body text ──────────────────────────────────────── */
+.body p {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--text);
+}
+
+.body p + p {
+  margin-top: 1.2em;
+}
+
+/* Em-dashes with italic spans */
+.body em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Thesis block */
+.thesis {
+  margin-top: 36px;
+  padding: 24px 28px;
+  border-left: 2px solid var(--accent);
+  background: var(--accent-dim);
+}
+
+.thesisLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.thesisLink {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  transition: color var(--transition);
+}
+
+.thesisLink:hover {
+  color: var(--accent);
+}
+
+.thesisArrow {
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--transition), transform var(--transition);
+  display: inline-block;
+}
+
+.thesisLink:hover .thesisArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Right — meta panel ────────────────────────────────────── */
+.meta {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid var(--border);
+}
+
+.metaRow {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  align-items: start;
+}
+
+.metaRow:first-child {
+  padding-top: 0;
+}
+
+.metaRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.metaKey {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 2px;
+}
+
+.metaVal {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+}
+
+.metaVal a {
+  color: rgba(0, 0, 0, 0.65);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.metaVal a:hover {
+  color: #000000;
+  border-bottom-color: rgba(0, 0, 0, 1);
+}
+
+/* Inline dot separator between items */
+.sep {
+  display: inline-block;
+  margin: 0 5px;
+  opacity: 0.3;
+}
+
+/* Tags for domains */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 3px 8px;
+  border-radius: 1px;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tag:hover {
+  color: rgba(0, 0, 0, 0.95);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

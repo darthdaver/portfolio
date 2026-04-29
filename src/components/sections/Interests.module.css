@@ -1,0 +1,86 @@
+.intro {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* Icon row for all hobbies */
+.hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 80px;
+}
+
+.hobbyIcon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.hobby:hover .hobbyIcon {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hobbyIcon svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hobbyLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+/* Featured blocks */
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.featuredTitle {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.placeholder {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-faint);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

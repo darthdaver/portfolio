@@ -1,0 +1,233 @@
+/* ─── Sidebar shell ─────────────────────────────────────────── */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--nav-width);          /* 64px collapsed */
+  display: flex;
+  flex-direction: column;
+  padding: 28px 0 24px;
+  border-right: 1px solid var(--border);
+  background: var(--bg);
+  z-index: 100;
+  overflow: hidden;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s ease;
+}
+
+.sidebar:hover {
+  width: 220px;
+  box-shadow: 3px 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Monogram / brand ──────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 var(--nav-monogram-pad);
+  margin-bottom: 40px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.monogram {
+  width: var(--nav-monogram-width);
+  height: var(--nav-monogram-height);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.sidebar:hover .monogram {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.brandLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s 0.1s ease,
+              transform 0.25s 0.1s ease;
+  line-height: 1.5;
+}
+
+.sidebar:hover .brandLabel {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Nav ───────────────────────────────────────────────────── */
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: var(--nav-monogram-pad);
+  overflow: hidden;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px calc(var(--nav-monogram-width) / 2 - var(--nav-circle-radius));
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  border-radius: 2px;
+  transition: background var(--transition);
+}
+
+.navLink:hover {
+  background: var(--surface);
+}
+
+/* Dot indicator — always visible */
+.navDot {
+  width: calc(var(--nav-circle-radius)*2);
+  height: calc(var(--nav-circle-radius)*2);
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--border);
+  transition: background var(--transition),
+              transform 0.2s ease;
+}
+
+.navLink:hover .navDot,
+.navLink.active .navDot {
+  background: var(--accent);
+  transform: scale(1.4);
+}
+
+/* Label text — hidden when collapsed, revealed on sidebar hover */
+.navText {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  position: relative;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: color var(--transition),
+              opacity 0.2s 0.05s ease,
+              transform 0.2s 0.05s ease;
+}
+
+.sidebar:hover .navText {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Strikethrough animation ── */
+.navText::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink.active .navText {
+  color: var(--accent);
+}
+
+.navLink.active .navText::after {
+  width: 100%;
+}
+
+.navLink:hover .navText {
+  color: var(--accent);
+}
+
+.navLink:hover .navText::after {
+  width: 100%;
+}
+
+/* ─── External icon links ───────────────────────────────────── */
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 10px;
+  flex-shrink: 0;
+}
+
+/* Thin separator above icons */
+.icons::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--border);
+  margin: 0 8px 12px;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 9px 8px;
+  color: var(--text-faint);
+  white-space: nowrap;
+  border-radius: 2px;
+  transition: color var(--transition), background var(--transition);
+}
+
+.iconLink:hover {
+  color: var(--accent);
+  background: var(--surface);
+}
+
+.iconLink svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.iconLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s 0.05s ease,
+              transform 0.2s 0.05s ease;
+}
+
+.sidebar:hover .iconLabel {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
