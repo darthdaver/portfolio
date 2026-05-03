@@ -12,6 +12,11 @@
   color: var(--text);
 }
 
+.bio em {
+  font-style: italic;
+  color: var(--accent);
+}
+
 .bio p + p {
   margin-top: 1.2em;
 }

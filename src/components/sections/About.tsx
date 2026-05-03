@@ -7,16 +7,20 @@ export default function About() {
       <div className={styles.grid}>
         <div className={styles.bio}>
           <p>
-            I am a young researcher (I wonder until what age it&apos;s valid to label oneself as
-            &lsquo;young&rsquo;) who obtained a PhD in Computer Science in December 2025 at the{" "}
-            <em>Università della Svizzera italiana</em>, with a thesis titled{" "}
-            <em>A Neuro-Symbolic Approach fro Test Oracle Generation</em>. Previously, I earned a Master&apos;s degree
-            in Computer Science and Engineering at <em>Politecnico di Milano</em>.
+            I am a postdoctoral researcher at the <em>Università della Svizzera italiana (USI)</em> and earned my Ph.D.
+            in December 2025 with a dissertation that defines a neuro-symbolic approach combining <em>AI models</em> with
+            <em>static analysis</em> to infer test oracles and automate the software verification process.
           </p>
           <p>
-            I currently hold a PostDoc position at the Università della Svizzera italiana. My
-            research interests include Software Engineering, Artificial Intelligence, Data Analysis,
-            and Software Testing.
+            I enjoy integrating cutting-edge AI technologies into the entire software development lifecycle with the aim
+            of automatizing routine tasks while improving <em>software quality</em>. My current research focuses on designing
+            <em>agent-based AI</em> orchestrators that coordinate specialized agents to automatically generate entire test suites.
+            This applied research aims to make the developed projects available for industrial use, thereby contributing
+            to technological progress.
+          </p>
+          <p>
+            In addition to my primary research, I have a strong interest in <em>UX/UI design</em>, <em>data analysis  and visualization</em>,
+            as well as <em>3D web modeling</em>
           </p>
         </div>
 

@@ -36,7 +36,7 @@ const ICON_LINKS = [
   },
   {
     label: "Scholar",
-    href: "https://scholar.google.com",
+    href: "https://scholar.google.com/citations?user=Tfl2UVkAAAAJ&hl=it",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3L1 9l11 6 9-4.91V17" />
@@ -46,7 +46,7 @@ const ICON_LINKS = [
   },
   {
     label: "CV",
-    href: "/cv.pdf",
+    href: "/resources/molinelli-cv.pdf",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

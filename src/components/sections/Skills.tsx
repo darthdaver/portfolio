@@ -1,18 +1,37 @@
 import SectionWrapper from "./SectionWrapper";
 import styles from "./Skills.module.css";
 
-const COMPUTER_SKILLS = [
-  { label: "Programming Languages",          tags: ["Java", "Python"] },
-  { label: "AI Frameworks & Libraries",      tags: ["Hugging Face", "Pandas", "PyTorch"] },
-  { label: "Java Frameworks & Libraries",    tags: ["JavaParser", "JUnit", "Maven", "Pitest"] },
-  { label: "Web Development",                tags: ["CSS", "HTML", "JavaScript", "TypeScript"] },
-  { label: "Web Frameworks & Libraries",     tags: ["D3.js", "Express", "Flask", "Node.js", "React", "Three.js", "Vite"] },
-  { label: "Version Control",                tags: ["Git"] },
+const HARD_SKILLS = [
+  { label: "Programming Languages",
+    tags: ["Java", "Python", "Typescript", "Javascript"]
+  },
+  { label: "AI/ML",
+    tags: ["Hugging Face", "Pandas", "PyTorch"]
+  },
+  { label: "Java Stack",
+    tags: ["JavaParser", "JUnit", "Maven", "Pitest"]
+  },
+  { label: "Web Stack",
+    tags: ["CSS", "HTML", "Node.js", "Express", "Flask", "Vite", "D3.js", "Three.js"]
+  },
+  { label: "VCS",
+    tags: ["Git", "GitHub"]
+  },
 ];
 
-const DESIGN_SKILLS = [
-  { label: "UI / UX Design",  tags: ["Affinity Designer", "Illustrator", "Figma"] },
-  { label: "Photography",     tags: ["Lightroom"] },
+const SOFT_SKILLS = [
+  { label: "UI / UX ",
+    tags: ["Affinity Designer", "Illustrator", "Figma"]
+  },
+  { label: "Photography",
+    tags: ["Lightroom", "Analog", "Composition"]
+  },
+  { label: "Research",
+    tags: ["Writing", "Peer Review", "Mentoring"]
+  },
+  { label: "Personality",
+    tags: ["Curiosity", "Willpower", "Patience", "Open minded"]
+  }
 ];
 
 export default function Skills() {
@@ -20,8 +39,8 @@ export default function Skills() {
     <SectionWrapper id="skills" index="01" title="Skills">
       <div className={styles.grid}>
         <div className={styles.group}>
-          <span className={styles.groupTitle}>Computer Skills</span>
-          {COMPUTER_SKILLS.map(({ label, tags }) => (
+          <span className={styles.groupTitle}>Hard Skills</span>
+          {HARD_SKILLS.map(({ label, tags }) => (
             <div key={label} className={styles.category}>
               <span className={styles.categoryLabel}>{label}</span>
               <div className={styles.tags}>
@@ -32,8 +51,8 @@ export default function Skills() {
         </div>
 
         <div className={styles.group}>
-          <span className={styles.groupTitle}>Design Skills</span>
-          {DESIGN_SKILLS.map(({ label, tags }) => (
+          <span className={styles.groupTitle}>Soft Skills</span>
+          {SOFT_SKILLS.map(({ label, tags }) => (
             <div key={label} className={styles.category}>
               <span className={styles.categoryLabel}>{label}</span>
               <div className={styles.tags}>

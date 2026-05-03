@@ -1,70 +1,165 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.card {
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
   border: 1px solid var(--border);
-  padding: 24px;
-  background: var(--bg);
-  transition: border-color var(--transition), transform var(--transition);
-  position: relative;
 }
 
-.card::before {
+/* ── Card ── */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 32px 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  margin: -1px 0 0 -1px;
+  transition: background var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 3px;
-  height: 0;
+  inset: 0;
   background: var(--accent);
-  transition: height var(--transition);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
 }
 
 .card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+  background: var(--surface);
 }
 
-.card:hover::before {
-  height: 100%;
+/* ── Top row: category + number ── */
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.category {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.numDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 20px;
+  transition: background var(--transition);
+}
+
+.card:hover .divider {
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+/* ── Body ── */
+.cardBody {
+  flex: 1;
 }
 
 .cardTitle {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
-  margin-bottom: 8px;
+  font-size: 1.45rem;
+  font-weight: 400;
   color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.15;
+  transition: color var(--transition);
+}
+
+.card:hover .cardTitle {
+  color: var(--accent);
 }
 
 .cardDesc {
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 16px;
+  line-height: 1.6;
 }
 
-.cardLink {
+/* ── Footer: tags + repo link ── */
+.cardFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tags {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 9px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap var(--transition);
-}
-
-.cardLink:hover {
-  gap: 10px;
-}
-
-.placeholder {
-  font-family: var(--font-serif);
-  font-style: italic;
   color: var(--text-faint);
-  font-size: 1rem;
+}
+
+.tagDot {
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+.repoLink {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition: opacity var(--transition);
+}
+
+.card:hover .repoLink {
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px 20px 18px;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }

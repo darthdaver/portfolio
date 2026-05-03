@@ -23,13 +23,13 @@ export default function Research() {
           <p>
             My doctoral thesis &mdash;{" "}
             <em>A Neuro-Symbolic Approach for Test Oracle Generation</em> &mdash;
-            centered on neuro-symbolic methods for the automated generation of axiomatic
+            centered on <em>neuro-symbolic</em> methods for the automated generation of axiomatic
             and concrete unit testing oracles, leveraging Java class documentation, method signatures, and test prefixes.
           </p>
 
           <p>
-            Currently, I am shifting the focus towards <em>agent-based approaches</em>{" "}
-            in which an <em>orchestrator</em> delegates tasks to specialized agents
+            Currently, I am shifting the focus towards <em>agent-based</em> approaches
+            in which an <em>orchestrator</em> delegates tasks to <em>specialized agents</em>{" "}
             for source code analysis, specification analysis, and generation
             of unit test cases and test suites.
           </p>
