@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "cp -r assets/resources public/",
+    "prebuild": "mkdir -p public/resources && cp -r assets/resources/* public/resources/",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
