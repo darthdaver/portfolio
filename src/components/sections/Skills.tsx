@@ -12,7 +12,7 @@ const HARD_SKILLS = [
     tags: ["JavaParser", "JUnit", "Maven", "Pitest"]
   },
   { label: "Web Stack",
-    tags: ["CSS", "HTML", "Node.js", "Express", "Flask", "Vite", "Three.js"]
+    tags: ["CSS", "HTML", "Node.js", "Express", "Flask", "Vite", "React"]
   },
   { label: "VCS",
     tags: ["Git", "GitHub"]
