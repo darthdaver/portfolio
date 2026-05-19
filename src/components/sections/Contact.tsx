@@ -31,7 +31,6 @@ export default function Contact() {
         <div>
           <p className={styles.tagline}>
             Open to new opportunities.<br />
-            Let&apos;s build something together.
           </p>
           <a href="mailto:molinelli.dav@gmail.com" className={styles.email}>
             molinelli.dav@gmail.com

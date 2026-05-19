@@ -12,7 +12,7 @@ const HARD_SKILLS = [
     tags: ["JavaParser", "JUnit", "Maven", "Pitest"]
   },
   { label: "Web Stack",
-    tags: ["CSS", "HTML", "Node.js", "Express", "Flask", "Vite", "D3.js", "Three.js"]
+    tags: ["CSS", "HTML", "Node.js", "Express", "Flask", "Vite", "Three.js"]
   },
   { label: "VCS",
     tags: ["Git", "GitHub"]
@@ -30,7 +30,7 @@ const SOFT_SKILLS = [
     tags: ["Writing", "Peer Review", "Mentoring"]
   },
   { label: "Personality",
-    tags: ["Curiosity", "Willpower", "Patience", "Open minded"]
+    tags: ["Curiosity", "Willpower", "Empathy", "Open minded", "Creativity"]
   }
 ];
 
