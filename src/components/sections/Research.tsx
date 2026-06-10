@@ -39,7 +39,7 @@ export default function Research() {
               PhD Thesis &middot; USI Lugano &middot; December 2025
             </span>
             <a
-              href="https://sonar.rero.ch/global/documents/334462"
+              href="https://susi.usi.ch/usi/documents/334462"
               className={styles.thesisLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -141,7 +141,7 @@ export default function Research() {
             <span className={styles.metaKey}>Thesis</span>
             <span className={styles.metaVal}>
               <a
-                  href="https://sonar.rero.ch/global/documents/334462"
+                  href="https://susi.usi.ch/usi/documents/334462"
                   target="_blank"
                   rel="noopener noreferrer"
               >
